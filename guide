@@ -1,0 +1,46 @@
+leyend:
+    > command
+    ~ key
+
+> sudo mkdir /opt/radio_reloj
+
+copy:
+    clock_ticks.py
+    time_sync_ntp.py
+to:
+    /opt/radio_reloj
+
+> sudo chmod -R 777 /opt/radio_reloj
+
+> python (~tab twise) note: check avaliable python envs 
+
+open clock_ticks.service:
+    line 8, change: python3.6 
+            to:     your_python_env
+open time_sync_ntp.service:
+    line 8, change: python3.6 
+            to:     your_python_env
+
+copy:
+    clock_ticks.service
+    time_sync_ntp.service
+to:
+    /etc/systemd/system
+
+> sudo chmod 775 /etc/systemd/system/clock_tick.service
+> sudo chmod 775 /etc/systemd/system/time_sync_ntp.service
+
+> sudo systemctl daemon-reload
+> sudo systemctl enable clock_ticks.service
+> sudo systemctl enable time_sync_ntp.service
+
+> sudo pip3 install simpleaudio
+> sudo pip3 install numpy
+> sudo pip3 install ntplib
+
+> sudo systemctl start clock_ticks.service
+> sudo systemctl start time_sync_ntp.service
+
+> sudo systemctl status clock_ticks.service
+> sudo systemctl status time_sync_ntp.service
+
