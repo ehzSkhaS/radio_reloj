@@ -1,5 +1,5 @@
 [Unit]
-Description=Clock_Ticks
+Description=Telegraphic
 
 [Service]
 User=root
@@ -7,7 +7,7 @@ CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=99
 Type=simple
 WorkingDirectory=/opt/radio_reloj/
-ExecStart=/usr/bin/python3.6 /opt/radio_reloj/clock_ticks.py
+ExecStart=/usr/bin/python3.6 /opt/radio_reloj/telegraphic.py
 #Restart=always
 
 [Install]

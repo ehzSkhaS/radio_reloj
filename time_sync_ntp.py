@@ -10,18 +10,18 @@ if sys.platform == "win32":
     from ctypes import Structure, windll, pointer
 
 
-class SYSTEMTIME(Structure):
-    _fields_ = [
-        ( 'wYear',            WORD ),
-        ( 'wMonth',           WORD ),
-        ( 'wDayOfWeek',       WORD ),
-        ( 'wDay',             WORD ),
-        ( 'wHour',            WORD ),
-        ( 'wMinute',          WORD ),
-        ( 'wSecond',          WORD ),
-        ( 'wMilliseconds',    WORD ),
-    ]
-SetLocalTime = windll.kernel32.SetLocalTime
+    class SYSTEMTIME(Structure):
+        _fields_ = [
+            ( 'wYear',            WORD ),
+            ( 'wMonth',           WORD ),
+            ( 'wDayOfWeek',       WORD ),
+            ( 'wDay',             WORD ),
+            ( 'wHour',            WORD ),
+            ( 'wMinute',          WORD ),
+            ( 'wSecond',          WORD ),
+            ( 'wMilliseconds',    WORD ),
+        ]
+    SetLocalTime = windll.kernel32.SetLocalTime
 
 """ Linux time structure """
 if sys.platform.startswith('linux'):

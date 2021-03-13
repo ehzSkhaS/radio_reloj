@@ -6,7 +6,7 @@ User=root
 Type=simple
 WorkingDirectory=/opt/radio_reloj/
 ExecStart=/usr/bin/python3.6 /opt/radio_reloj/time_sync_ntp.py
-Restart=always
+#Restart=always
 
 [Install]
 WantedBy=multi-user.target
