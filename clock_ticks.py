@@ -48,15 +48,14 @@ class Generator():
     def emit(self):
         t = datetime.now()
         if t.microsecond < 25000:
-            if t.minute % 5 == 0 and t.second == 0:
-                self.naudio[2].play()
-                print(t.hour, ":", t.minute, ":", t.second, ":", t.microsecond)
-            elif t.minute % 5 != 0 and t.second == 0:
-                self.naudio[1].play()
-                print(t.hour, ":", t.minute, ":", t.second, ":", t.microsecond)
+            if t.second == 0:
+                if t.minute % 5 == 0:
+                    self.naudio[2].play()
+                elif t.minute % 5 != 0:
+                    self.naudio[1].play()
             else:
                 self.naudio[0].play()
-                print(t.hour, ":", t.minute, ":", t.second, ":", t.microsecond)
+            print(t.hour, ":", t.minute, ":", t.second, ":", t.microsecond)
         time.sleep((1000000 - datetime.now().microsecond) * 0.000001)
 
 
