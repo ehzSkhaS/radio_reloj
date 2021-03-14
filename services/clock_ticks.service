@@ -4,7 +4,7 @@ Description=Clock_Ticks
 [Service]
 User=root
 CPUSchedulingPolicy=fifo
-CPUSchedulingPriority=99
+CPUSchedulingPriority=50
 Type=simple
 WorkingDirectory=/opt/radio_reloj/
 ExecStart=/usr/bin/python3.6 /opt/radio_reloj/clock_ticks.py

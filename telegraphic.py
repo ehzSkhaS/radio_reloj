@@ -11,6 +11,7 @@ except ImportError:
 
 
 class Telegraphic():
+    # cache audio files into CPU
     @lru_cache(maxsize=None)
     def __init__(self):
         gm.mixer.init()

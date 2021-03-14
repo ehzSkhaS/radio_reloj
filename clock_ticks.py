@@ -5,8 +5,9 @@ from functools import lru_cache
 
 
 class Generator():
+    # cache audio files into CPU
     @lru_cache(maxsize=None)
-    def __init__(self):        
+    def __init__(self):
         gm.mixer.init()
         # List of: audio
         self.naudio = [gm.mixer.Sound('sounds/tick.wav'),
@@ -15,7 +16,8 @@ class Generator():
 
     def emit(self):
         t = datetime.now()
-        if t.microsecond < 50000:
+        # avoid time tick lag after sync with NTP
+        if t.microsecond < 500000:
             if t.second == 0:
                 if t.minute % 5 == 0:
                     self.naudio[2].play()
@@ -24,6 +26,7 @@ class Generator():
             else:
                 self.naudio[0].play()
             print(t.hour, ":", t.minute, ":", t.second, ":", t.microsecond)
+        # sleep only the amount of micros left after now timestamp
         time.sleep((1000000 - datetime.now().microsecond) * 0.000001)
 
 
