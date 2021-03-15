@@ -12,7 +12,8 @@
 *copy:*
   >>**clock_ticks.py**<br>
   >>**time_sync_ntp.py**<br>
-  >>**telegraphic.py**
+  >>**telegraphic.py**<br>
+  >>**sounds**
 
 *to:* 
   >>**/opt/radio_reloj**
@@ -29,7 +30,7 @@
   >>*line 8, change: python3.6*<br>
   >>*to: your_python_env*
 
-*open* **telegraphic.py:**
+*open* **telegraphic.service:**
   >>*line 10, change: python3.6*<br>
   >>*to: your_python_env*
 
@@ -62,10 +63,9 @@
 
 *hardwire connect: (Button)*
   >>**pin number 1**<br>  
-  >>**pin number 10**
+  >>**pin number 10**<br>
+
   >>![rpi3gpio](https://github.com/ehzSkhaS/radio_reloj/blob/optimized/docs/rpi3gio.png)
   >>![schematic](https://github.com/ehzSkhaS/radio_reloj/blob/optimized/docs/schematic.png)
 
-**DONE**
-
-  
+**DONE** 
