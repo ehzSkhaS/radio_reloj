@@ -7,7 +7,7 @@ CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=50
 Type=simple
 WorkingDirectory=/opt/radio_reloj/
-ExecStart=/usr/bin/python3.6 /opt/radio_reloj/telegraphic.py
+ExecStart=/usr/bin/python3.7 /opt/radio_reloj/telegraphic.py
 #Restart=always
 
 [Install]
