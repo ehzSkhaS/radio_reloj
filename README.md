@@ -61,8 +61,10 @@
 **`sudo shutdown -h 0`**
 
 *hardwire connect: (Button)*
-  >>**pin number 1**<br>
+  >>**pin number 1**<br>  
   >>**pin number 10**
+  >>![rpi3gpio](https://github.com/ehzSkhaS/radio_reloj/blob/optimized/docs/rpi3gio.png)
+  >>![schematic](https://github.com/ehzSkhaS/radio_reloj/blob/optimized/docs/schematic.png)
 
 **DONE**
 
