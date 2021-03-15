@@ -62,7 +62,7 @@
 
 *hardwire connect: (Button)*
   >>**pin number 1**<br>
-  >>**pin numberr 10**
+  >>**pin number 10**
 
 **DONE**
 
