@@ -23,15 +23,15 @@
 **`python`** *(press tab twise)* **note:** check avaliable python envs 
 
 *open* **clock_ticks.service:**
-  >>*line 10, change: python3.6*<br> 
+  >>*line 10, change: python3.7*<br> 
   >>*to: your_python_env*
 
 *open* **time_sync_ntp.service:**
-  >>*line 8, change: python3.6*<br>
+  >>*line 8, change: python3.7*<br>
   >>*to: your_python_env*
 
 *open* **telegraphic.service:**
-  >>*line 10, change: python3.6*<br>
+  >>*line 10, change: python3.7*<br>
   >>*to: your_python_env*
 
 *copy:*
