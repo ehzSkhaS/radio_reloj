@@ -61,7 +61,7 @@
 **`sudo shutdown -h 0`**
 
 *hardwire connect: (Button)*
-  >>**pin number 1**
+  >>**pin number 1**<br>
   >>**pin numberr 10**
 
 **DONE**
