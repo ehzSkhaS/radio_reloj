@@ -29,7 +29,7 @@
   >>*line 8, change: python3.6*<br>
   >>*to: your_python_env*
 
-*open* **telegraphic.py:**
+*open* **telegraphic.service:**
   >>*line 10, change: python3.6*<br>
   >>*to: your_python_env*
 
