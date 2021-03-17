@@ -90,6 +90,6 @@ def set_linux_time(host, wait_time):
 
 if __name__ == "__main__":
     if sys.platform == "win32":
-        set_windows_time("pool.ntp.org", 5)
+        set_windows_time("pool.ntp.org", 420)
     if sys.platform.startswith('linux'):
-        set_linux_time("pool.ntp.org", 5)
+        set_linux_time("pool.ntp.org", 420)
