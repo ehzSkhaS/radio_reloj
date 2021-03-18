@@ -2,7 +2,7 @@
 Description=Clock_Ticks
 
 [Service]
-User=root
+User=pi
 CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=50
 Type=simple

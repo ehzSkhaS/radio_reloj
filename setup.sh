@@ -24,7 +24,11 @@ sudo rm "$boot_services/$tele_s"
 sudo rm -dR $rr
 
 sudo apt-get update
+sudo apt-get --purge --reinstall install pulseaudio
+sudo sec -i -e 's/; nice-level = -11/; nice-level = -1/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; flat-volumes = yes/; flat-volumes = no/g' /etc/pulse/daemon.conf
 sudo apt-get install python3.7 libsdl2-mixer-2.0-0 python-rpi.gpio python3-rpi.gpio
+
 pip3 install ntplib pygame
 pip3 install --upgrade --force-reinstall pygame
 

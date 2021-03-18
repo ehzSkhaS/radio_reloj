@@ -2,7 +2,7 @@
 Description=Telegraphic
 
 [Service]
-User=root
+User=pi
 CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=50
 Type=simple
