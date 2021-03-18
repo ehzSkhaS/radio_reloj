@@ -1,8 +1,3 @@
-import sys
-if sys.platform.startswith('linux'):
-    import os
-    os.system("export SDL_AUDIODRIVER=pulseaudio")
-
 import time
 import pygame as gm
 import importlib.util
