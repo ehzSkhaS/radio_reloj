@@ -24,10 +24,27 @@ sudo rm "$boot_services/$tele_s"
 sudo rm -dR $rr
 
 sudo apt-get update
-sudo apt-get --purge --reinstall install pulseaudio
-sudo sec -i -e 's/; nice-level = -11/; nice-level = -1/g' /etc/pulse/daemon.conf
-sudo sec -i -e 's/; flat-volumes = yes/; flat-volumes = no/g' /etc/pulse/daemon.conf
+sudo apt-get --purge --reinstall install alsa-base alsa-utils pulseaudio
+sudo pt-get install pavumeter pavucontrol paman paprefs
 sudo apt-get install python3.7 libsdl2-mixer-2.0-0 python-rpi.gpio python3-rpi.gpio
+
+sudo sec -i -e 's/; high-priority = yes/ high-priority = yes/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; nice-level = -11/ nice-level = -11/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; realtime-scheduling = yes/ realtime-scheduling = yes/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; realtime-priority = 5/ realtime-priority = 5/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; flat-volumes = yes/ flat-volumes = no/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; default-sample-format = s16le/ default-sample-format = s16le/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; default-sample-rate = 44100/ default-sample-rate = 44100/g' /etc/pulse/daemon.conf
+sudo sec -i -e 's/; default-sample-channels = 2/ default-sample-channels = 1/g' /etc/pulse/daemon.conf
+#sudo sec -i -e 's/; default-fragments = 4/ default-fragments = 2/g' /etc/pulse/daemon.conf
+#sudo sec -i -e 's/ default-fragment-size-msec = 15/ default-fragment-size-msec = 5/g' /etc/pulse/daemon.conf
+
+sudo sec -i -e 's/load-module module-suspend-on-idle/#load-module module-suspend-on-idle/g' /etc/pulse/default.pa
+#sudo sec -i -e 's/load-module module-udev-detect/load-module module-udev-detect tsched=0/g' /etc/pulse/default.pa
+
+sudo adduser pulse audio
+sudo adduser pi audio
+sudo adduser root audio
 
 echo 'export SDL_AUDIODRIVER=pulseaudio' >> ~/.bashrc
 source ~/.bashrc
@@ -59,3 +76,5 @@ sudo systemctl start $sync_s
 sudo systemctl start $tele_s
 
 echo "DONE"
+echo "Warning: Remember change Raspberry Boot/Autologin to Console Autologin"
+echo "Then Reboot"

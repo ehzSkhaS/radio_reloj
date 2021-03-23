@@ -1,13 +1,13 @@
-
 import time
 import asyncio
 import pygame as gm
 from datetime import datetime
+from functools import lru_cache
 
 
 class Generator():
     def __init__(self):
-        gm.init()
+        gm.mixer.pre_init(frequency=44100, size=-16, channels=1, buffer=1024)
         gm.mixer.init()
         # List of: audio
         self.naudio = [gm.mixer.Sound('sounds/tick.wav'),
@@ -26,10 +26,11 @@ class Generator():
                         self.naudio[1].play()
                     elif t.minute % 5 == 0:
                         self.naudio[2].play()
-                print(t.hour, ':', t.minute, ':', t.second, ':', t.microsecond)
+                # print(t.hour, ':', t.minute, ':', t.second, ':', t.microsecond)
             # sleep only the amount of micros left after now timestamp
             time.sleep((1000000 - datetime.now().microsecond) * 0.000001)
 
+    @lru_cache(maxsize=16)
     async def async_emit(self):
         while 1:
             t = datetime.now()
@@ -42,7 +43,7 @@ class Generator():
                         self.naudio[1].play()
                     elif t.minute % 5 == 0:
                         self.naudio[2].play()
-                print(t.hour, ':', t.minute, ':', t.second, ':', t.microsecond)
+                # print(t.hour, ':', t.minute, ':', t.second, ':', t.microsecond)
             # sleep only the amount of micros left after now timestamp
             await asyncio.sleep((1000000 - datetime.now().microsecond) * 0.000001)
 

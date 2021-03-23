@@ -4,10 +4,10 @@ Description=Telegraphic
 [Service]
 User=pi
 CPUSchedulingPolicy=fifo
-CPUSchedulingPriority=50
+CPUSchedulingPriority=99
 Type=simple
 WorkingDirectory=/opt/radio_reloj/
-ExecStartPre=/bin/sleep 60
+ExecStartPre=/bin/sleep 30
 ExecStart=/usr/bin/python3.7 /opt/radio_reloj/telegraphic.py
 #Restart=always
 

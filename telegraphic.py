@@ -8,13 +8,14 @@ try:
 except ImportError:
     import FakeRPi.GPIO as GPIO
 
+gm.mixer.pre_init(frequency=44100, size=-16, channels=1, buffer=512)
 gm.mixer.init()
 rr = gm.mixer.Sound('sounds/rr.wav')
 
 
 def catch_telegraphic(channel):
     rr.play()
-    print('Button was pressed...')
+    # print('Button was pressed...')
 
 
 if __name__ == '__main__':
