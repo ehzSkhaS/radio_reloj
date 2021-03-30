@@ -3,8 +3,8 @@ Description=Telegraphic
 
 [Service]
 User=pi
-CPUSchedulingPolicy=fifo
-CPUSchedulingPriority=99
+#CPUSchedulingPolicy=fifo
+#CPUSchedulingPriority=99
 Type=simple
 WorkingDirectory=/opt/radio_reloj/
 ExecStartPre=/bin/sleep 30
