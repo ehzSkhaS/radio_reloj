@@ -8,7 +8,7 @@ try:
 except ImportError:
     import FakeRPi.GPIO as GPIO
 
-gm.mixer.pre_init(frequency=44100, size=-16, channels=1, buffer=512)
+gm.mixer.pre_init(frequency=44100, size=-16, channels=1, buffer=1024)
 gm.mixer.init()
 rr = gm.mixer.Sound('sounds/rr.wav')
 
